@@ -4,32 +4,32 @@ author: NapolGamer TH
 version: 1.0
 api: [3.0.0-ALPHA8, 3.0.0-ALPHA9, 3.0.0-ALPHA10, 3.0.0-ALPHA11, 3.0.1]
 load: POSTWORLD
-description: Guards your chest 
+description: ปกป้องกล่องของผู้เล่นในเซิร์ฟของคุณ
 website: https://github.com/NapolGamerTH/ChestGuard/
 commands:
  cg:
-  desciption: Lock and unlock chests
+  desciption: ล็อกและปลดล็อกกล่อง
   usage: /cg <option>
   permission: chestguard.command.cg
  scg:
-  desciption: PocketGuard command for op user
+  desciption: คำสั่งสำหรับแอดมิน
   usage: /scg <option>
   permission: chestguard.command.scg
 permissions:
  chestguard:
   default: op
-  description: "Allows using all the ChestGuard things"
+  description: "ใช้คำสั่งของปลั๊กอินนี้ทั้งหมด"
   children:
    chestguard.command:
     default: op
-    description: "Allows using all the ChestGuard commands"
+    description: "ใช้คำสั่งของปลั๊กอินนี้ทั้งหมด"
     children:
      chestguard.command.cg:
       default: true
-      description: "Allows using /cg command"
+      description: "ใช้คำสั่ง /cg"
      chestguard.command.scg:
       default: op
-      description: "Allows using /scg command"
+      description: "ใช้คำสั่ง /scg"
    chestguard.op:
     default: op
-    description: "Allows breaking all locked chests"
+    description: "สามารถทำลายกล่องที่ล็อกได้!"
