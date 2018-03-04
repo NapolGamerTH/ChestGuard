@@ -1,7 +1,7 @@
 <?php
-namespace MinecrafterJPN;
+namespace Napol;
 use pocketmine\level\Position;
-class PocketGuardDatabaseManager
+class ChestGuardDatabaseManager
 {
     const NOT_LOCKED = -1;
     const NORMAL_LOCK = 0;
