@@ -14,10 +14,10 @@ use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\tile\Chest;
 class ChestGuard extends PluginBase implements Listener {
-    /** @var PocketGuardDatabaseManager  */
+    /** @var ChestGuardDatabaseManager  */
     private $databaseManager;
     private $queue;
-    /** @var  PocketGuardLogger */
+    /** @var  ChestGuardLogger */
     private $chestGuardLogger;
     // Constants
     const NOT_LOCKED = -1;
@@ -31,8 +31,8 @@ class ChestGuard extends PluginBase implements Listener {
 	{
         @mkdir($this->getDataFolder());
         $this->queue = [];
-        $this->chestGuardLogger = new PocketGuardLogger($this->getDataFolder() . 'ChestGuard.log');
-        $this->databaseManager = new PocketGuardDatabaseManager($this->getDataFolder() . 'ChestGuard.sqlite3');
+        $this->chestGuardLogger = new ChestGuardLogger($this->getDataFolder() . 'ChestGuard.log');
+        $this->databaseManager = new ChestGuardDatabaseManager($this->getDataFolder() . 'ChestGuard.sqlite3');
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
     }
 	public function onDisable()
@@ -239,7 +239,7 @@ class ChestGuard extends PluginBase implements Listener {
                                 $this->pocketGuardLogger->log("[" . $event->getPlayer()->getName() . "] Action:Passunlock Level:{$chest->getLevel()->getName()} Coordinate:{$chest->x},{$chest->y},{$chest->z}");
                             } else {
                                 $event->getPlayer()->sendMessage("§f-> §cไม่สามารถปลดล็อกกล่องได้ §eเพราะ§f:§cรหัสผ่านผิด!");
-                                $this->pocketGuardLogger->log("[" . $event->getPlayer()->getName() . "] Action:FailPassunlock Level:{$chest->getLevel()->getName()} Coordinate:{$chest->x},{$chest->y},{$chest->z}");
+                                $this->chestGuardLogger->log("[" . $event->getPlayer()->getName() . "] Action:FailPassunlock Level:{$chest->getLevel()->getName()} Coordinate:{$chest->x},{$chest->y},{$chest->z}");
                             }
                         } else {
                             $event->getPlayer()->sendMessage("§f-> §eกล่องนี้ยังไม่ถูกล็อกด้วยรหัสผ่าน!");
