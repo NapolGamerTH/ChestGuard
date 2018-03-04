@@ -98,7 +98,7 @@ class ChestGuard extends PluginBase implements Listener {
                                 $target = array_shift($args);
                                 if (is_null($target)) {
                                     $sender->sendMessage("§f-> §cต้องการชื่อผู้เล่น!");
-                                    $sender->sendMessage("§e/spg unlock player §b<player>");
+                                    $sender->sendMessage("§e/scg unlock player §b<player>");
                                     return true;
                                 }
                                 $this->databaseManager->deletePlayerData($target);
@@ -135,7 +135,7 @@ class ChestGuard extends PluginBase implements Listener {
                 $event->getPlayer()->sendMessage("§f-> §aปลดล็อกกล่องสำเร็จแล้ว!");
             } elseif ($attribute !== self::NOT_LOCKED and $owner !== $event->getPlayer()->getName() and !$event->getPlayer()->hasPermission("pocketguard.op")) {
                 $event->getPlayer()->sendMessage("§f-> §aกล่องนี้ถูกล็อกแล้ว!");
-                $event->getPlayer()->sendMessage("§f-> §aลอง \"§e/pg info\" §aเพื่อดูข้อมูลเพิ่มเติมกับกล่องนี้!");
+                $event->getPlayer()->sendMessage("§f-> §aลอง \"§e/cg info\" §aเพื่อดูข้อมูลเพิ่มเติมกับกล่องนี้!");
                 $this->chestGuardLogger->log("[" . $event->getPlayer()->getName() . "] Action:Unlock Level:{$chest->getLevel()->getName()} Coordinate:{$chest->x},{$chest->y},{$chest->z}");
                 $event->setCancelled();
             }
@@ -252,7 +252,7 @@ class ChestGuard extends PluginBase implements Listener {
                 unset($this->queue[$event->getPlayer()->getName()]);
             } elseif($attribute !== self::NOT_LOCKED and $attribute !== self::PUBLIC_LOCK and $owner !== $event->getPlayer()->getName() and !$event->getPlayer()->hasPermission("pocketguard.op")) {
                 $event->getPlayer()->sendMessage("§f-> §eกล่องนี้ถูกล็อกอยู่!");
-                $event->getPlayer()->sendMessage("§f-> §aลอง§f \"/pg info\" §aเพื่อดูข้อมูลกล่องเพิ่มเติม!");
+                $event->getPlayer()->sendMessage("§f-> §aลอง§f \"/cg info\" §aเพื่อดูข้อมูลกล่องเพิ่มเติม!");
 
                 $event->setCancelled();
             }
