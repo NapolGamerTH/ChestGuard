@@ -1,5 +1,5 @@
 name: ChestGuard
-main: Napol
+main: Napol\ChestGuard
 author: NapolGamer TH
 version: 1.1
 api: [3.0.0-ALPHA8, 3.0.0-ALPHA9, 3.0.0-ALPHA10, 3.0.0-ALPHA11, 3.0.1]
@@ -8,11 +8,11 @@ description: ปกป้องกล่องของผู้เล่นใ�
 website: https://github.com/NapolGamerTH/ChestGuard/
 commands:
  cg:
-  desciption: ล็อกและปลดล็อกกล่อง
+  desciption: "ล็อกและปลดล็อกกล่อง"
   usage: /cg <option>
   permission: chestguard.command.cg
  scg:
-  desciption: คำสั่งสำหรับแอดมิน
+  desciption: "คำสั่งสำหรับแอดมิน"
   usage: /scg <option>
   permission: chestguard.command.scg
 permissions:
