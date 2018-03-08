@@ -1,4 +1,3 @@
-
 <?php
 namespace Napol;
 use pocketmine\event\block\BlockPlaceEvent;
@@ -38,7 +37,7 @@ class ChestGuard extends PluginBase implements Listener {
 	public function onDisable()
 	{
 	}
-	public function onCommand(CommandSender $sender, Command $command, $label, array $args)
+	public function onCommand(CommandSender $sender, Command $command, $label, array $args): bool
 	{
         if (!($sender instanceof Player)) {
             $sender->sendMessage("§cต้องใช้งานในเกมเท่านั้น!");
