@@ -2,7 +2,12 @@ name: ChestGuard
 main: Napol\ChestGuard
 author: NapolGamer TH
 version: 1.1
-api: [3.0.0-ALPHA8, 3.0.0-ALPHA9, 3.0.0-ALPHA10, 3.0.0-ALPHA11, 3.0.1]
+api: 
+- 3.0.0-ALPHA8
+- 3.0.0-ALPHA9
+- 3.0.0-ALPHA10
+- 3.0.0-ALPHA11
+- 3.0.1
 load: POSTWORLD
 description: ปกป้องกล่องของผู้เล่นในเซิร์ฟของคุณ
 website: https://github.com/NapolGamerTH/ChestGuard/
